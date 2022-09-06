@@ -1,5 +1,7 @@
 ﻿using System;
 
+using R5T.T0143;
+
 
 namespace R5T.T0137
 {
@@ -8,7 +10,9 @@ namespace R5T.T0137
     /// The marker attribute is useful for surveying context definition types and building a catalogue of those types.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
-    public class ContextDefinitionMarkerAttribute : Attribute
+    [MarkerAttributeMarker]
+    public class ContextDefinitionMarkerAttribute : Attribute,
+        IMarkerAttributeMarker
     {
         private readonly bool zIsContextDefinition;
         /// <summary>

@@ -1,5 +1,7 @@
 ﻿using System;
 
+using R5T.T0143;
+
 
 namespace R5T.T0137
 {
@@ -8,7 +10,9 @@ namespace R5T.T0137
     /// The marker attribute is useful for surveying context implementation classes and building a catalogue of those classes.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class ContextImplementationMarkerAttribute : Attribute
+    [MarkerAttributeMarker]
+    public class ContextImplementationMarkerAttribute : Attribute,
+        IMarkerAttributeMarker
     {
         private readonly bool zIsContextImplementation;
         /// <summary>
